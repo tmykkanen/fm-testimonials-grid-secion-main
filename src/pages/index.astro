@@ -17,9 +17,12 @@ import kiraWhite from "@images/image-kira.jpg";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="font-barlow bg-fm-grey-100 text-[13px] font-medium">
-    <main>
-      <article class="card-purple">
+  <body class="font-barlow @container text-[13px] font-medium">
+    <main class="base-layout">
+      <article
+        class="card-purple shadow-fm-grey-200 shadow-lg"
+        style="grid-column: 1 / span 2;"
+      >
         <header>
           <Image src={danielAvatar} alt={"Avatar for Daniel Clifford"} />
           <h2>
@@ -44,7 +47,10 @@ import kiraWhite from "@images/image-kira.jpg";
           a Software Engineer at a VR startup. "
         </p>
       </article>
-      <article class="card-grey">
+      <article
+        class="card-grey shadow-fm-grey-200 shadow-lg"
+        style="grid-column: 3 / span 1;"
+      >
         <header>
           <Image src={jonathanAvatar} alt={"Avatar for Jonathan Walters"} />
           <h2>
@@ -61,7 +67,10 @@ import kiraWhite from "@images/image-kira.jpg";
           investments I’ve made in myself. ”
         </p>
       </article>
-      <article class="card card-white">
+      <article
+        class="shadow-fm-grey-200 card-white shadow-lg"
+        style="grid-column: 1 / span 1;"
+      >
         <header>
           <Image src={jeanetteAvatar} alt={"Avatar for Jeanette Harmon"} />
           <h2>
@@ -76,7 +85,10 @@ import kiraWhite from "@images/image-kira.jpg";
           enjoy, and make a good living while doing something I love. ”
         </p>
       </article>
-      <article class="card card-blue">
+      <article
+        class="shadow-fm-grey-200 card-blue shadow-lg"
+        style="grid-column: 2 / span 2;"
+      >
         <header>
           <Image src={patrickAvatar} alt={"Avatar for Patrick Abrams"} />
           <h2>
@@ -99,7 +111,10 @@ import kiraWhite from "@images/image-kira.jpg";
           people. ”
         </p>
       </article>
-      <article class="card card-white">
+      <article
+        class="shadow-fm-grey-200 card-white shadow-lg"
+        style="grid-column: 4 / span 1; grid-row: 1 / span 2;"
+      >
         <header>
           <Image src={kiraWhite} alt={"Avatar for Kira Whittle"} />
           <h2>
@@ -130,6 +145,27 @@ import kiraWhite from "@images/image-kira.jpg";
 </html>
 
 <style>
+  html {
+    background-color: var(--color-fm-grey-100);
+  }
+  .base-layout {
+    padding: 2rem;
+
+    & > * {
+      margin-block-end: 2rem;
+    }
+
+    @container (width >= 60rem) {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      & > * {
+        margin-block: 0;
+      }
+    }
+  }
+
   .accent-text {
     color: var(--accent-color);
     font-weight: 600;
@@ -141,8 +177,10 @@ import kiraWhite from "@images/image-kira.jpg";
     color: var(--text-color);
 
     margin-inline: auto;
-    width: 305px;
+    /* margin-block: 2rem; */
+    /* width: 305px; */
     padding: 2.5rem 1.75rem 2rem;
+    border-radius: 0.5rem;
 
     & > header {
       /* mb-4 flex gap-4 */
@@ -161,6 +199,10 @@ import kiraWhite from "@images/image-kira.jpg";
     & > p.accent-text {
       font-size: 1.5rem;
       margin-block-end: 1rem;
+    }
+
+    @container (width < 60rem) {
+      max-width: 65ch;
     }
   }
   .card-purple {

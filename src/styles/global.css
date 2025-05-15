@@ -15,4 +15,6 @@
   --color-fm-black: hsl(0, 0%, 7%);
 
   --font-barlow: "Barlow Semi Condensed", sans-serif;
+
+  --fm-breakpoint: 40rem;
 }
