@@ -47,7 +47,7 @@ Users should be able to:
 
 - I implemented google font using `@import url`
 - I focused on trying to use as much vanilla css as possible. I still used tailwind for general reset and a few utility classes.
-- I tried `<headers>` as a semantic html tag (rather than just the wrapper for a header nav).
+- I tried `<header>` as a semantic html tag (rather than just the wrapper for a header nav).
 - I continued to improve my understanding of CSS Grid and @container queries.
 
 ### Continued development
